@@ -16,7 +16,7 @@ export function Header() {
             to="/" 
             className="text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors"
           >
-            Catalog Explorer
+            {import.meta.env.VITE_APP_TITLE || 'Catalog Explorer'}
           </Link>
           
           <nav aria-label="Main navigation">

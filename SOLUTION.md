@@ -116,8 +116,10 @@ Adding Redux would be unnecessary complexity for this scale.
 
 ### 8. Deployability
 
-- **Environment-agnostic**: API base URL can be configured
-- **Vite build**: Production-ready builds with `npm run build`
+- **Environment files**: `.env.development`, `.env.staging`, `.env.production`
+- **Configurable settings**: `VITE_API_URL`, `VITE_APP_TITLE` per environment
+- **Build scripts**: `npm run build`, `npm run build:staging`, `npm run build:production`
+- **Vite modes**: Uses `--mode` flag to load correct env file
 - **Separate backend**: json-server runs independently, can be replaced with real API
 
 ---

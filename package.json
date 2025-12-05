@@ -8,6 +8,8 @@
     "dev:client": "vite",
     "server": "json-server --watch server/db.json --port 3001",
     "build": "vite build",
+    "build:staging": "vite build --mode staging",
+    "build:production": "vite build --mode production",
     "lint": "eslint .",
     "preview": "vite preview"
   },

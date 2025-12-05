@@ -34,13 +34,36 @@ This starts:
 - Frontend at http://localhost:5173
 - Backend (json-server) at http://localhost:3001
 
-## Building for Production
+## Environment Configuration
+
+The app supports multiple environments via `.env` files:
+
+- `.env.development` - Local development (default)
+- `.env.staging` - Staging environment
+- `.env.production` - Production environment
+
+**Environment Variables:**
+
+| Variable | Description | Example |
+|----------|-------------|----------|
+| `VITE_API_URL` | API base URL | `/api` or `https://api.example.com` |
+| `VITE_APP_TITLE` | App title shown in header | `Catalog Explorer` |
+
+Copy `.env.example` to create your own configuration.
+
+## Building for Different Environments
 
 ```bash
-# Create production build
+# Development build (uses .env.development)
 npm run build
 
-# Preview production build locally
+# Staging build (uses .env.staging)
+npm run build:staging
+
+# Production build (uses .env.production)
+npm run build:production
+
+# Preview any build locally
 npm run preview
 ```
 
