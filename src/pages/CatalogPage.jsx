@@ -1,7 +1,7 @@
 import { useSearchParams } from 'react-router-dom';
 import { useProducts } from '../hooks/useProducts';
 import { useDebounce } from '../hooks/useDebounce';
-import { SearchBar, FilterPanel, SortSelect, ProductGrid } from '../components';
+import { SearchBar, FilterPanel, SortSelect, ProductGrid, LoadingSkeleton } from '../components';
 
 /**
  * Custom hook to sync filter state with URL params
@@ -89,9 +89,7 @@ export default function CatalogPage() {
 
       {/* Results */}
       <section aria-live="polite" aria-busy={loading}>
-        {loading && (
-          <div className="text-center py-12 text-gray-600">Loading products…</div>
-        )}
+        {loading && <LoadingSkeleton count={12} />}
         
         {error && (
           <div className="text-center py-12 text-red-600" role="alert">
