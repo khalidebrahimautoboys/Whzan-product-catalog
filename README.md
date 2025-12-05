@@ -1,16 +1,88 @@
-# React + Vite
+# Catalog Explorer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A product catalog application built with React for the Whzan Senior Frontend Developer assignment.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Browse products with search, filter by category/availability, and sort
+- View detailed product information
+- Save favorites (persists across sessions via localStorage)
+- Shareable URLs (filters sync to URL params)
+- Mobile-responsive design (2/3/4 column grid)
+- Accessible (ARIA labels, keyboard navigation, skip links)
+- Error boundary and 404 handling
 
-## React Compiler
+## Prerequisites
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Node.js 18+
+- npm
 
-## Expanding the ESLint configuration
+## Setup
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm install
+```
+
+## Running Locally
+
+```bash
+# Start development server (frontend + backend)
+npm run dev
+```
+
+This starts:
+- Frontend at http://localhost:5173
+- Backend (json-server) at http://localhost:3001
+
+## Building for Production
+
+```bash
+# Create production build
+npm run build
+
+# Preview production build locally
+npm run preview
+```
+
+## Running Production Build Locally
+
+```bash
+# Terminal 1: Start the backend
+npm run server
+
+# Terminal 2: Build and preview
+npm run build
+npm run preview
+```
+
+Note: For full production deployment, you'd need to deploy json-server separately or replace with a real backend.
+
+## Tech Stack
+
+- React 19
+- Vite
+- Tailwind CSS v4
+- React Router v7
+- json-server (mock REST API)
+
+## Project Structure
+
+```
+src/
+├── api/           # API client functions
+├── components/    # Reusable UI components
+├── context/       # React Context (Favorites)
+├── hooks/         # Custom hooks (useDebounce, useProducts)
+├── pages/         # Route pages
+├── App.jsx        # Router setup
+└── main.jsx       # Entry point
+
+server/
+└── db.json        # Mock database (100 products)
+```
+
+## Routes
+
+- `/` - Product catalog
+- `/product/:id` - Product details
+- `/favorites` - Saved items
