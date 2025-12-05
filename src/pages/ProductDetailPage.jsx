@@ -3,9 +3,9 @@ import { useProduct } from '../hooks/useProducts';
 import { useFavorites } from '../context/FavoritesContext';
 
 function formatPrice(price) {
-  return new Intl.NumberFormat('en-US', {
+  return new Intl.NumberFormat('en-ZA', {
     style: 'currency',
-    currency: 'USD',
+    currency: 'ZAR',
   }).format(price);
 }
 
