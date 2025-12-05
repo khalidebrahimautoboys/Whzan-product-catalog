@@ -2,9 +2,9 @@ import { Link } from 'react-router-dom';
 import { useFavorites } from '../context/FavoritesContext';
 
 function formatPrice(price) {
-  return new Intl.NumberFormat('en-ZA', {
+  return new Intl.NumberFormat('en-US', {
     style: 'currency',
-    currency: 'ZAR',
+    currency: 'USD',
   }).format(price);
 }
 
