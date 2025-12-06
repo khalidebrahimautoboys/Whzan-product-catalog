@@ -17,7 +17,8 @@ I prioritized:
 
 - **Product count**: The requirement mentions "thousands of products" but doesn't specify exact scale. I implemented pagination (12 items/page) which handles this efficiently without virtualization.
 - **Categories**: Used 5 fixed categories (Electronics, Clothing, Home, Sports, Books) based on the mock data rather than dynamically fetching them.
-- **Authentication**: Not required—favorites are per-browser, not per-user.
+- **Authentication**: Not required—favorites are per-browser, not per-user. Could have implemented some simple one but I like my authentication flow to show I have an idea of cybersec, at least on a decent level
+- **Localized Website**: Since there isnt much time, doing multiple currency to symbol mappings might take up too much time and isnt really showcasing anything meaningful. But this will be project dependant
 
 ---
 
